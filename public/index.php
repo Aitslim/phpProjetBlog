@@ -2,6 +2,7 @@
 
 $path = dirname(__DIR__);
 
+ob_start();
 try {
     $page = isset($_GET['page']) ? $_GET['page'] : 'post.home';
 
@@ -16,9 +17,13 @@ try {
     } elseif ($page === 'user.connect') {
 
         require dirname(__DIR__) . '/user/connectionForm.php';
+        // connect();
     } else {
         throw new Exception('404');
     }
 } catch (Exception $e) {
     require dirname(__DIR__) . '/view/error/error' . $e->getMessage() . '.php';
 }
+$content = ob_get_clean();
+
+require dirname(__DIR__) . '/view/base.php';

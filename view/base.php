@@ -13,8 +13,7 @@
 
     <?php require dirname(__DIR__) . '/view/shared/_nav.php'; ?>
     <div class="container">
-        <p>Je suis dans base</p>
-        <?php $content ?>
+        <?= $content ?>
     </div>
 
 </body>
