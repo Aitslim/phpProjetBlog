@@ -22,7 +22,15 @@
 
         // render('show', compact('post'));   // Le post
     }
+    /*
+    function error()
+    {
+        require dirname(__DIR__) . '/model/postRepository.php';
+        $post = findOneById($_GET['id']);
 
+        render('show', compact('post'));   // Le post
+    }
+*/
     function render($view, $datas)
     {
         extract($datas);
