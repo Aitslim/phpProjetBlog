@@ -27,7 +27,7 @@ function findOneById(int $id): array
     return $result;
 }
 
-function getDBConnection()
+function getDBConnection(): PDO
 {
     try {
         $option = [
